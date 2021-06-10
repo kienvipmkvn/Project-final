@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="header" (click)="back()">Quản lý</div>
+  <div class="edit">
+    <div class="field flex">
+      <div class="name">Tên</div>
+      <div type="text" name="name">{{ product.Name }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name">Hãng</div>
+      <div type="text" name="name">{{ brand }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name">Giá</div>
+      <div type="text" name="name">{{ product.Price }}</div>
+    </div>
+    <div class="flex column">
+      <div class="name">Thông tin</div>
+      <div type="text" name="name">{{ product.Detail }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name">Ảnh</div>
+      <div class="product-image">
+        <img src="{{ product.Image }}" alt="{{ product.Name }}" />
+      </div>
+    </div>
+    <button (click)="edit()">Sửa</button>
+    <button style="margin: 0 16px;" (click)="deleted()" >Xoá</button>
+  </div>
+</div>

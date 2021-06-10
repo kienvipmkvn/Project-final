@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="header" (click)="home()">Quản lý</div>
+  <div class="edit">
+    <form #form="ngForm">
+      <div class="field flex">
+        <label for="name">Tên</label>
+        <input [(ngModel)]="product.Name" type="text" name="name" required>
+      </div>
+      <div class="field flex">
+        <label for="name">Hãng</label>
+        <select name="brand" [(ngModel)]="product.BrandID" required>
+          <option *ngFor="let brand of brands" [selected]="product.BrandID ===brand.ID" [ngValue]="brand.ID">{{ brand.Name }}</option>
+        </select>
+      </div>
+      <div class="field flex">
+        <label for="name">Giá</label>
+        <input [(ngModel)]="product.Price" min="0" type="number" name="price">
+      </div>
+      <div class="field flex">
+        <label for="name">Thông tin</label>
+        <textarea [(ngModel)]="product.Detail" type="text" name="detail" rows="10"></textarea>
+      </div>
+      <div class="field flex">
+        <label for="name">Ảnh</label>
+        <input [(ngModel)]="product.Image" type="text" name="imageLink">
+      </div>
+      <button [disabled]="form.invalid" (click)="save()">Lưu</button>
+      <button style="margin: 0 16px;" (click)="cancel()" >Huỷ</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="cart-container">
+  <div class="header" (click)="back()">Quản lý</div>
+  <div class="info">
+    <div class="field flex">
+      <div class="name1">Tên khách hàng</div>
+      <div type="text" name="name">{{ order.Name }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name1">Điện thoại</div>
+      <div type="text" name="name">{{ order.UserPhone }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name1">Địa chỉ</div>
+      <div type="text" name="name">{{ order.UserAddress }}</div>
+    </div>
+    <div class="field flex">
+      <div class="name1">Giá trị đơn hàng</div>
+      <div type="text" name="name">{{ order.Amount | currency: 'VND'}}</div>
+    </div>
+    <div class="field flex">
+      <div class="name1">Tình trạng</div>
+      <select [(ngModel)]="order.Status" (change)="change()">
+        <option value="Đã đặt hàng">Đã đặt hàng</option>
+        <option value="Đã xác nhận">Đã xác nhận</option>
+        <option value="Đang giao hàng">Đang giao hàng</option>
+        <option value="Đã hoàn thành">Đã hoàn thành</option>
+      </select>
+    </div>
+  </div>
+  <div style="margin-top: 32px;" class="list-product">
+    <ng-container *ngFor="let p of listProduct">
+      <div class="item flex">
+        <div class="col1">
+          <div class="name text-ellipsis">
+            {{ p.product.Name }}
+          </div>
+          <div class="price text-ellipsis">
+            Đơn giá: {{ p.product.Price | currency: "VND" }}
+          </div>
+        </div>
+        <div class="total-price">
+          {{ p.product.Price * p.quantity | currency: "VND" }}
+        </div>
+        <div class="number">
+          {{ p.quantity }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <button style="margin: 0 16px" [disabled]="!isEdit" (click)="save()">Lưu</button>
+</div>

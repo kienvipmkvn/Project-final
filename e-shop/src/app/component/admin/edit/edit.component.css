@@ -1,0 +1,50 @@
+.container{
+  padding: 0 15vw;
+}
+@media only screen and (max-width: 1200px) {
+  .container{
+    padding: 0 5vw;
+  }
+}
+.header{
+  position: relative;
+  color: inherit;
+  height: 50px;
+  font-size: 25px;
+  line-height: 30px;
+  padding: .625rem 0;
+  font-weight: 300;
+  margin-left: 1rem;
+  font-weight: bold;
+  color: #2a30ff;
+  cursor: pointer;
+}
+
+input{
+  margin: 8px 0;
+  height: 24px;
+  width: 50%;
+}
+
+textarea, select{
+  width: 50%;
+}
+
+select{
+  width: 50%;
+  height: 24px;
+}
+
+button{
+  width: 75px;
+  height: 32px;
+  margin-left: 70px;
+}
+
+label{
+  width: 70px;
+}
+
+.field{
+  align-items: center;
+}
